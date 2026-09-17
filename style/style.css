@@ -46,3 +46,67 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+/*****************
+    MAIN STYLES
+*****************/
+.container{
+    margin: 0 auto;
+    /* 0 on the top and bottom, automatic on the left and right
+    (which centers the element in it's parent)*/
+    max-width: 900px;
+    /*always have a maximum width to your site*/
+    background: lightgrey;
+}
+/*****************
+    NAV STYLES
+*****************/
+/* the > is the "direct child" selector - which means only select the element after
+if it is directly inside the first element.*/
+
+nav > ul{
+display: flex;
+/*one way to spread out elements is justify content */
+justify-content: space-around;
+}
+
+nav > ul > li{
+    flex-grow: 1;
+    /*flex grow allows elements to expand to fill up the space*/
+}
+
+nav > ul > li:first-child{
+    /*this will affect only the first li */
+    flex-grow: 3;
+}
+
+
+nav ul a{
+    padding: 5px;
+    /* 1 value adds padding on all 4 sides of the element*/
+    display: block;
+    /* this changes the anchor tags from inline to block, so they will be as wide as they 
+    can and you can put padding on the top and bottom */
+    background: pink;
+}
+
+nav ul a:hover, nav ul a:active{
+    /* use a hover and active state because there is no hover on mobile */
+    background-color: aqua;
+    color: white;
+}
+/* dropdown code */
+nav ul li ul{
+    display: none;
+}
+
+/* you have to have a parent with position reletive to properly contain anything 
+with position absolute */
+nav ul li{
+    position: relative;
+}    
+nav ul li:hover ul{
+    display: block;
+    /*this will make it visible*/
+    position: absolute;
+    width: 100%;
+}
